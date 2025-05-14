@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Stripe Dashboard Navigation</title>
+    <g id="Stripe-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0A2540" x="0" y="0" width="800" height="400"></rect>
+        <rect id="Sidebar" fill="#0E2E4A" x="0" y="0" width="200" height="400"></rect>
+        <rect id="Header" fill="#0A2540" x="200" y="0" width="600" height="60"></rect>
+        <text id="Stripe-Dashboard" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="bold" fill="#FFFFFF">
+            <tspan x="220" y="35">Stripe Dashboard</tspan>
+        </text>
+        <g id="Sidebar-Menu" transform="translate(20, 80)">
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="0" y="0">Home</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="0" y="40">Payments</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="0" y="80">Customers</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="0" y="120">Products</tspan>
+            </text>
+            <text font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FFFFFF">
+                <tspan x="0" y="160">Developers</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#FFFFFF">
+                <tspan x="20" y="190">API keys</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="20" y="220">Webhooks</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="20" y="250">Logs</tspan>
+            </text>
+            <text font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="0" y="290">Settings</tspan>
+            </text>
+        </g>
+        <g id="Content" transform="translate(220, 80)">
+            <rect id="Content-Box" fill="#0E2E4A" x="0" y="0" width="560" height="300" rx="4"></rect>
+            <text id="Developers-Section" font-family="Arial-BoldMT, Arial" font-size="18" font-weight="bold" fill="#FFFFFF">
+                <tspan x="20" y="30">Developers</tspan>
+            </text>
+            <text id="Description" font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+                <tspan x="20" y="60">Access your API keys and developer tools</tspan>
+            </text>
+            <rect id="API-Keys-Box" stroke="#6772E5" fill="#132F4C" x="20" y="80" width="160" height="100" rx="4"></rect>
+            <text id="API-Keys" font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FFFFFF">
+                <tspan x="70" y="130">API Keys</tspan>
+            </text>
+            <rect id="Webhooks-Box" fill="#132F4C" x="200" y="80" width="160" height="100" rx="4"></rect>
+            <text id="Webhooks" font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#FFFFFF">
+                <tspan x="250" y="130">Webhooks</tspan>
+            </text>
+            <rect id="Logs-Box" fill="#132F4C" x="380" y="80" width="160" height="100" rx="4"></rect>
+            <text id="Logs" font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#FFFFFF">
+                <tspan x="445" y="130">Logs</tspan>
+            </text>
+            <path id="Arrow" d="M80,190 L90,200 L100,190" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import PaymentHistory from '@/components/PaymentHistory'
-import DynamicStripeGuide from '@/components/DynamicStripeGuide'
 
 const Dashboard = () => {
   const { data: session, status } = useSession()
@@ -424,54 +424,41 @@ const Dashboard = () => {
                   
                   {/* Import the StripeGuide component */}
                   <div className="mb-6">
-                    <DynamicStripeGuide />
+                    {React.createElement(
+                      dynamic(() => import('@/components/StripeGuide'), {
+                        ssr: false,
+                        loading: () => <p className="text-slate-400">Loading guide...</p>
+                      })
+                    )}
                   </div>
                   
-                  <div className="grid gap-4 mt-4">
-                    <div className="flex flex-col">
-                      <label htmlFor="stripePublishableId" className="text-sm font-medium mb-2 text-white flex items-center">
-                        <span>Stripe Publishable Key</span>
-                        <span className="ml-2 px-2 py-0.5 bg-slate-700 rounded text-xs">Required for payments</span>
-                      </label>
-                      <div className="relative">
-                        <input 
-                          type="text" 
-                          id="stripePublishableId" 
-                          name="stripePublishableId" 
-                          value={formData.stripePublishableId} 
-                          onChange={handleChange} 
-                          placeholder="pk_live_..." 
-                          className={`w-full bg-slate-800 border ${errors.stripePublishableId ? 'border-red-500' : 'border-slate-700'} text-white rounded-lg p-2.5 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400`} 
-                        />
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <span className="text-slate-400">pk_</span>
-                        </div>
-                      </div>
-                      {errors.stripePublishableId && <p className="mt-1 text-sm text-red-500">{errors.stripePublishableId}</p>}
-                    </div>
-                    
-                    <div className="flex flex-col">
-                      <label htmlFor="stripeSecretId" className="text-sm font-medium mb-2 text-white flex items-center">
-                        <span>Stripe Secret Key</span>
-                        <span className="ml-2 px-2 py-0.5 bg-slate-700 rounded text-xs">Required for payments</span>
-                      </label>
-                      <div className="relative">
-                        <input 
-                          type="password" 
-                          id="stripeSecretId" 
-                          name="stripeSecretId" 
-                          value={formData.stripeSecretId} 
-                          onChange={handleChange} 
-                          placeholder="sk_live_..." 
-                          className={`w-full bg-slate-800 border ${errors.stripeSecretId ? 'border-red-500' : 'border-slate-700'} text-white rounded-lg p-2.5 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400`} 
-                        />
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <span className="text-slate-400">sk_</span>
-                        </div>
-                      </div>
-                      {errors.stripeSecretId && <p className="mt-1 text-sm text-red-500">{errors.stripeSecretId}</p>}
-                      <p className="mt-2 text-xs text-slate-400">Your secret key is stored securely and only used to process payments to your account.</p>
-                    </div>
+                  <div className="Stripe Publishable Id flex flex-col mb-4">
+                    <label htmlFor="stripePublishableId" className="text-sm font-medium mb-2 text-white">Stripe Publishable Key</label>
+                    <input 
+                      type="text" 
+                      id="stripePublishableId" 
+                      name="stripePublishableId" 
+                      value={formData.stripePublishableId} 
+                      onChange={handleChange} 
+                      placeholder="pk_live_..." 
+                      className={`w-full bg-slate-800 border ${errors.stripePublishableId ? 'border-red-500' : 'border-slate-700'} text-white rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400`} 
+                    />
+                    {errors.stripePublishableId && <p className="mt-1 text-sm text-red-500">{errors.stripePublishableId}</p>}
+                  </div>
+                  
+                  <div className="Stripe Secret Id flex flex-col mb-4">
+                    <label htmlFor="stripeSecretId" className="text-sm font-medium mb-2 text-white">Stripe Secret Key</label>
+                    <input 
+                      type="password" 
+                      id="stripeSecretId" 
+                      name="stripeSecretId" 
+                      value={formData.stripeSecretId} 
+                      onChange={handleChange} 
+                      placeholder="sk_live_..." 
+                      className={`w-full bg-slate-800 border ${errors.stripeSecretId ? 'border-red-500' : 'border-slate-700'} text-white rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400`} 
+                    />
+                    {errors.stripeSecretId && <p className="mt-1 text-sm text-red-500">{errors.stripeSecretId}</p>}
+                    <p className="mt-2 text-xs text-slate-400">Your secret key is stored securely and only used to process payments to your account.</p>
                   </div>
                 </div>
                 

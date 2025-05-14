@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Stripe API Keys</title>
+    <g id="Stripe-API-Keys" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0A2540" x="0" y="0" width="800" height="400"></rect>
+        <rect id="Content-Box" fill="#0E2E4A" x="40" y="40" width="720" height="320" rx="4"></rect>
+        <text id="API-Keys" font-family="Arial-BoldMT, Arial" font-size="18" font-weight="bold" fill="#FFFFFF">
+            <tspan x="60" y="70">API Keys</tspan>
+        </text>
+        <text id="Description" font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#A3AFBF">
+            <tspan x="60" y="100">Use these keys to authenticate API requests</tspan>
+        </text>
+        
+        <!-- Publishable Key Section -->
+        <rect id="Publishable-Key-Box" fill="#132F4C" x="60" y="120" width="680" height="80" rx="4"></rect>
+        <text id="Publishable-Key-Label" font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FFFFFF">
+            <tspan x="80" y="150">Publishable key</tspan>
+        </text>
+        <rect id="Publishable-Key-Value" fill="#0A2540" x="80" y="160" width="500" height="24" rx="2"></rect>
+        <text id="Publishable-Key-Example" font-family="Courier" font-size="12" font-weight="normal" fill="#A3AFBF">
+            <tspan x="90" y="177">pk_live_51Hb9xJDJ8bE6K0p8X4tZmMQs6IJI6LNwK...</tspan>
+        </text>
+        <rect id="Copy-Button-1" stroke="#6772E5" fill="#132F4C" x="600" y="160" width="80" height="24" rx="4"></rect>
+        <text id="Copy" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#FFFFFF">
+            <tspan x="625" y="177">Copy</tspan>
+        </text>
+        
+        <!-- Secret Key Section -->
+        <rect id="Secret-Key-Box" fill="#132F4C" x="60" y="220" width="680" height="80" rx="4"></rect>
+        <text id="Secret-Key-Label" font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FFFFFF">
+            <tspan x="80" y="250">Secret key</tspan>
+        </text>
+        <rect id="Secret-Key-Value" fill="#0A2540" x="80" y="260" width="500" height="24" rx="2"></rect>
+        <text id="Secret-Key-Hidden" font-family="Courier" font-size="12" font-weight="normal" fill="#A3AFBF">
+            <tspan x="90" y="277">••••••••••••••••••••••••••••••••••••••••••</tspan>
+        </text>
+        <rect id="Reveal-Button" stroke="#6772E5" fill="#132F4C" x="600" y="260" width="80" height="24" rx="4"></rect>
+        <text id="Reveal" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#FFFFFF">
+            <tspan x="622" y="277">Reveal</tspan>
+        </text>
+        
+        <!-- Warning -->
+        <text id="Warning" font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold" fill="#F5BE58">
+            <tspan x="60" y="330">⚠️ Your secret key can be used to make any API request. Keep it secure!</tspan>
+        </text>
+    </g>
+</svg>

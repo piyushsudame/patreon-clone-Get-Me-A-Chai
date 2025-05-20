@@ -1,5 +1,6 @@
 import React from 'react'
 import mongoose from 'mongoose';
+import Image from 'next/image';
 import User from '@/models/user';
 import Payment from '@/models/Payment';
 import PaymentForm from '@/components/PaymentForm';
@@ -123,10 +124,13 @@ const Username = async ({ params, searchParams }) => {
       {/* Cover Image */}
       <div className='cover w-full bg-red-50'>
         <div className="overflow-hidden w-full relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
-          <img 
+          <Image 
             className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-auto min-w-full' 
             src={userData.coverpic || defaultCoverPic} 
-            alt={`${userData.name}'s cover`} 
+            alt={`${userData.name}'s cover`}
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
           />
         </div>
       </div>
@@ -134,11 +138,15 @@ const Username = async ({ params, searchParams }) => {
       {/* Profile Image */}
       <div className="w-full flex justify-center">
         <div className="w-[150px] h-[150px] relative -mt-[75px] mb-[10px]">
-          <img 
-            className='object-contain border-4 border-white rounded-full w-full h-full bg-white' 
-            src={userData.profilepic || defaultProfilePic} 
-            alt={`${userData.name}'s profile`} 
-          />
+          <div className="relative w-full h-full">
+            <Image 
+              className='object-contain border-4 border-white rounded-full bg-white' 
+              src={userData.profilepic || defaultProfilePic} 
+              alt={`${userData.name}'s profile`}
+              fill
+              priority
+            />
+          </div>
         </div>
       </div>
       
@@ -146,7 +154,7 @@ const Username = async ({ params, searchParams }) => {
       <div className='info flex flex-col items-center'>
         <div className='username flex flex-col items-center text-center px-4'>
           <h1 className='text-2xl font-bold mb-2'>@{userData.username}</h1>
-          <p className='text-xl mb-6'>Let's help {userData.name} get a chai!</p>
+          <p className='text-xl mb-6'>Let&apos;s help {userData.name} get a chai!</p>
         </div>
         
         {/* Toast notifications will handle payment status messages */}

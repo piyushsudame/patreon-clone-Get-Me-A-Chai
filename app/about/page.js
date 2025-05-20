@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function About() {
   return (
@@ -8,19 +7,13 @@ export default function About() {
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center text-center mb-16">
         <div className="relative mb-8">
-          <div className="relative w-24 h-24 md:w-32 md:h-32">
-            <Image 
-              src="/tea.gif" 
-              alt="Chai Cup" 
-              className="invertImg"
-              fill
-              priority
-            />
-          </div>
+          <img 
+            src="/tea.gif" 
+            alt="Chai Cup" 
+            className="invertImg w-24 h-24 md:w-32 md:h-32"
+          />
           <div className="absolute -bottom-2 -right-2 bg-purple-600 rounded-full p-2">
-            <div className="relative w-8 h-8">
-              <Image src="/coin.gif" alt="Coin" fill />
-            </div>
+            <img src="/coin.gif" alt="Coin" className="w-8 h-8" />
           </div>
         </div>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">About Get Me A Chai</h1>
@@ -43,16 +36,12 @@ export default function About() {
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-blue-800/30 p-6 rounded-lg border border-white/10 flex flex-col items-center text-center">
-              <div className="relative bg-slate-400 rounded-full p-2 w-16 h-16 mb-3">
-                <Image src="/man.gif" alt="Creator" fill />
-              </div>
+              <img src="/man.gif" alt="Creator" className="bg-slate-400 rounded-full p-2 w-16 h-16 mb-3" />
               <h3 className="font-bold mb-2">For Creators</h3>
               <p className="text-sm text-gray-300">Share your projects and receive direct support</p>
             </div>
             <div className="bg-purple-800/30 p-6 rounded-lg border border-white/10 flex flex-col items-center text-center">
-              <div className="relative bg-slate-400 rounded-full p-2 w-16 h-16 mb-3">
-                <Image src="/group.gif" alt="Community" fill />
-              </div>
+              <img src="/group.gif" alt="Community" className="bg-slate-400 rounded-full p-2 w-16 h-16 mb-3" />
               <h3 className="font-bold mb-2">For Supporters</h3>
               <p className="text-sm text-gray-300">Directly fund the creators you love</p>
             </div>

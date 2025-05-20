@@ -150,44 +150,44 @@ const Dashboard = () => {
     
     // Name validation
     if (!formData.name.trim()) {
-      newErrors.name = &apos;Name is required&apos;
+      newErrors.name = 'Name is required'
     }
     
     // Email validation
     if (!formData.email || !formData.email.trim()) {
-      newErrors.email = &apos;Email is required&apos;
+      newErrors.email = 'Email is required'
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = &apos;Email is invalid&apos;
+      newErrors.email = 'Email is invalid'
     }
     
     // Ensure email matches session email
     if (formData.email !== session?.user?.email) {
-      newErrors.email = &apos;Email must match your login email&apos;
+      newErrors.email = 'Email must match your login email'
     }
     
     // Username validation
     if (!formData.username.trim()) {
-      newErrors.username = &apos;Username is required&apos;
+      newErrors.username = 'Username is required'
     } else if (formData.username.includes(' ')) {
-      newErrors.username = &apos;Username cannot contain spaces&apos;
+      newErrors.username = 'Username cannot contain spaces'
     }
     
     // URL validations for pictures (optional fields)
     if (formData.profilePicture && !isValidUrl(formData.profilePicture)) {
-      newErrors.profilePicture = &apos;Please enter a valid URL&apos;
+      newErrors.profilePicture = 'Please enter a valid URL'
     }
     
     if (formData.coverPicture && !isValidUrl(formData.coverPicture)) {
-      newErrors.coverPicture = &apos;Please enter a valid URL&apos;
+      newErrors.coverPicture = 'Please enter a valid URL'
     }
     
     // Stripe validations
     if (formData.stripePublishableId && formData.stripePublishableId.length < 5) {
-      newErrors.stripePublishableId = &apos;Stripe Publishable ID seems too short&apos;
+      newErrors.stripePublishableId = 'Stripe Publishable ID seems too short'
     }
     
     if (formData.stripeSecretId && formData.stripeSecretId.length < 10) {
-      newErrors.stripeSecretId = &apos;Stripe Secret ID seems too short&apos;
+      newErrors.stripeSecretId = 'Stripe Secret ID seems too short'
     }
     
     setErrors(newErrors)

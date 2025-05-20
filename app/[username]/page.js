@@ -1,6 +1,5 @@
 import React from 'react'
 import mongoose from 'mongoose';
-import Image from 'next/image';
 import User from '@/models/user';
 import Payment from '@/models/Payment';
 import PaymentForm from '@/components/PaymentForm';
@@ -124,13 +123,10 @@ const Username = async ({ params, searchParams }) => {
       {/* Cover Image */}
       <div className='cover w-full bg-red-50'>
         <div className="overflow-hidden w-full relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
-          <Image 
+          <img 
             className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-auto min-w-full' 
             src={userData.coverpic || defaultCoverPic} 
-            alt={`${userData.name}'s cover`}
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
+            alt={`${userData.name}'s cover`} 
           />
         </div>
       </div>
@@ -138,15 +134,11 @@ const Username = async ({ params, searchParams }) => {
       {/* Profile Image */}
       <div className="w-full flex justify-center">
         <div className="w-[150px] h-[150px] relative -mt-[75px] mb-[10px]">
-          <div className="relative w-full h-full">
-            <Image 
-              className='object-contain border-4 border-white rounded-full bg-white' 
-              src={userData.profilepic || defaultProfilePic} 
-              alt={`${userData.name}'s profile`}
-              fill
-              priority
-            />
-          </div>
+          <img 
+            className='object-contain border-4 border-white rounded-full w-full h-full bg-white' 
+            src={userData.profilepic || defaultProfilePic} 
+            alt={`${userData.name}'s profile`} 
+          />
         </div>
       </div>
       

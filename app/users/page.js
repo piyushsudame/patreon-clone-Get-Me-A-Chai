@@ -1,15 +1,17 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 
-const UsersPage = () => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
+// Create a client component that uses useSearchParams
+const UsersContent = () => {
   const searchParams = useSearchParams();
   const page = parseInt(searchParams.get('page') || '1', 10);
+  
+  const { data: session, status } = useSession();
+  const router = useRouter();
   
   const [users, setUsers] = useState([]);
   const [pagination, setPagination] = useState({
@@ -258,6 +260,22 @@ const UsersPage = () => {
         </>
       )}
     </div>
+  );
+};
+
+// Loading fallback component for Suspense
+const UsersLoading = () => (
+  <div className="container mx-auto p-4 min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
+);
+
+// Main page component with Suspense boundary
+const UsersPage = () => {
+  return (
+    <Suspense fallback={<UsersLoading />}>
+      <UsersContent />
+    </Suspense>
   );
 };
 

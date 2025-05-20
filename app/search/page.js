@@ -1,16 +1,18 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
-const SearchPage = () => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
+// Create a client component that uses useSearchParams
+const SearchContent = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
+  
+  const { data: session, status } = useSession();
+  const router = useRouter();
   
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -159,6 +161,22 @@ const SearchPage = () => {
         </div>
       )}
     </div>
+  );
+};
+
+// Loading fallback component for Suspense
+const SearchLoading = () => (
+  <div className="container mx-auto p-4 min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
+);
+
+// Main page component with Suspense boundary
+const SearchPage = () => {
+  return (
+    <Suspense fallback={<SearchLoading />}>
+      <SearchContent />
+    </Suspense>
   );
 };
 

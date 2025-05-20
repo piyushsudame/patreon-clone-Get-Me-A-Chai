@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function StripeGuide() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,19 +66,23 @@ export default function StripeGuide() {
               <div className="step-content">
                 <h3>Go to API Keys</h3>
                 <ul>
-                  <li>Once you're in the Stripe Dashboard:</li>
-                  <li>Click "Developers" from the left sidebar</li>
-                  <li>Then click "API keys"</li>
+                  <li>Once you&apos;re in the Stripe Dashboard:</li>
+                  <li>Click &quot;Developers&quot; from the left sidebar</li>
+                  <li>Then click &quot;API keys&quot;</li>
                 </ul>
                 <div className="image-placeholder">
-                  <img 
-                    src="/images/stripe-dashboard-nav.svg" 
-                    alt="Stripe Dashboard Navigation" 
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.style.display = 'none';
-                    }}
-                  />
+                  <div className="relative w-full h-40">
+                    <Image 
+                      src="/images/stripe-dashboard-nav.svg" 
+                      alt="Stripe Dashboard Navigation" 
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,21 +92,25 @@ export default function StripeGuide() {
               <div className="step-content">
                 <h3>Copy Your Keys</h3>
                 <ul>
-                  <li>You'll see:</li>
+                  <li>You&apos;ll see:</li>
                   <li><strong>Publishable key</strong> (starts with pk_live_ or pk_test_)</li>
                   <li><strong>Secret key</strong> (starts with sk_live_ or sk_test_)</li>
-                  <li>Click "Reveal live key token" to see the secret key</li>
+                  <li>Click &quot;Reveal live key token&quot; to see the secret key</li>
                   <li>Copy and paste both keys into the corresponding fields in your profile settings</li>
                 </ul>
                 <div className="image-placeholder">
-                  <img 
-                    src="/images/stripe-api-keys.svg" 
-                    alt="Stripe API Keys" 
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.style.display = 'none';
-                    }}
-                  />
+                  <div className="relative w-full h-40">
+                    <Image 
+                      src="/images/stripe-api-keys.svg" 
+                      alt="Stripe API Keys" 
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

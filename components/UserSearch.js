@@ -41,6 +41,7 @@ const UserSearch = () => {
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const performSearch = async () => {
@@ -138,7 +139,7 @@ const UserSearch = () => {
           className="absolute z-10 w-full mt-2 bg-slate-900 border border-slate-700 rounded-lg shadow-lg"
         >
           <div className="px-4 py-3 text-sm text-gray-400">
-            No users found matching "{searchQuery}"
+            No users found matching &quot;{searchQuery}&quot;
           </div>
         </div>
       )}

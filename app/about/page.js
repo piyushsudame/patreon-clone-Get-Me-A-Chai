@@ -37,7 +37,7 @@ export default function About() {
             At Get Me A Chai, we believe every creator deserves the opportunity to bring their vision to life. Our platform connects passionate creators with supportive fans who want to contribute to their success.
           </p>
           <p className="text-gray-300">
-            We&apos;re building a community where creativity thrives through direct support, eliminating barriers between creators and their audience.
+            We're building a community where creativity thrives through direct support, eliminating barriers between creators and their audience.
           </p>
         </div>
         <div className="flex items-center justify-center">

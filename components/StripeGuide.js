@@ -66,7 +66,7 @@ export default function StripeGuide() {
               <div className="step-content">
                 <h3>Go to API Keys</h3>
                 <ul>
-                  <li>Once you&apos;re in the Stripe Dashboard:</li>
+                  <li>Once you';re in the Stripe Dashboard:</li>
                   <li>Click &quot;Developers&quot; from the left sidebar</li>
                   <li>Then click &quot;API keys&quot;</li>
                 </ul>
@@ -92,7 +92,7 @@ export default function StripeGuide() {
               <div className="step-content">
                 <h3>Copy Your Keys</h3>
                 <ul>
-                  <li>You&apos;ll see:</li>
+                  <li>You';ll see:</li>
                   <li><strong>Publishable key</strong> (starts with pk_live_ or pk_test_)</li>
                   <li><strong>Secret key</strong> (starts with sk_live_ or sk_test_)</li>
                   <li>Click &quot;Reveal live key token&quot; to see the secret key</li>

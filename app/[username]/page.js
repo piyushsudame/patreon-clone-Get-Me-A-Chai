@@ -154,7 +154,7 @@ const Username = async ({ params, searchParams }) => {
       <div className='info flex flex-col items-center'>
         <div className='username flex flex-col items-center text-center px-4'>
           <h1 className='text-2xl font-bold mb-2'>@{userData.username}</h1>
-          <p className='text-xl mb-6'>Let&apos;s help {userData.name} get a chai!</p>
+          <p className='text-xl mb-6'>Let';s help {userData.name} get a chai!</p>
         </div>
         
         {/* Toast notifications will handle payment status messages */}

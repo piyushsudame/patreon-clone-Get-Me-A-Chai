@@ -125,7 +125,7 @@ const Username = async ({ params, searchParams }) => {
       <div className='cover w-full bg-red-50'>
         <div className="overflow-hidden w-full relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
           <img 
-            className='absolute h-full w-auto min-w-full object-cover' 
+            className='absolute transform -translate-x-1/2 -translate-y-1/2 h-full w-auto min-w-full object-cover' 
             src={userData.coverpic || defaultCoverPic} 
             alt={`${userData.name}'s cover`}
           />

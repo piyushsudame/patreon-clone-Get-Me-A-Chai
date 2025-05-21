@@ -139,10 +139,12 @@ const Username = async ({ params, searchParams }) => {
       <div className="w-full flex justify-center">
         <div className="w-[150px] h-[150px] relative -mt-[75px] mb-[10px]">
           <div className="relative w-full h-full">
-            <img 
-              className='object-contain border-4 border-white rounded-full bg-white w-full h-full' 
+            <Image 
+              className='object-contain border-4 border-white rounded-full bg-white' 
               src={userData.profilepic || defaultProfilePic} 
               alt={`${userData.name}'s profile`}
+              fill
+              priority
             />
           </div>
         </div>
